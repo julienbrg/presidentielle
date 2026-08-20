@@ -450,7 +450,7 @@ export const translations: Translations = {
       messageSignedDescription: signature => `Signature: ${signature.substring(0, 20)}...`,
       countdown: {
         heading: '2027 French Presidential Election',
-        tagline: 'No bullshit, just what you need to vote.',
+        tagline: 'Just what you need to vote.',
         registrationDeadline: 'Voter registration deadline',
         firstRound: 'First round',
         secondRound: 'Second round',
@@ -915,7 +915,7 @@ export const translations: Translations = {
       messageSignedDescription: signature => `签名：${signature.substring(0, 20)}...`,
       countdown: {
         heading: '2027年法国总统大选',
-        tagline: '没有废话，只有投票所需的一切。',
+        tagline: '只有投票所需的一切。',
         registrationDeadline: '选民登记截止日期',
         firstRound: '第一轮',
         secondRound: '第二轮',
@@ -1360,7 +1360,7 @@ export const translations: Translations = {
       messageSignedDescription: signature => `हस्ताक्षर: ${signature.substring(0, 20)}...`,
       countdown: {
         heading: '2027 फ़्रांसीसी राष्ट्रपति चुनाव',
-        tagline: 'कोई बकवास नहीं, सिर्फ़ वही जो वोट देने के लिए चाहिए।',
+        tagline: 'सिर्फ़ वही जो वोट देने के लिए चाहिए।',
         registrationDeadline: 'मतदाता पंजीकरण की अंतिम तिथि',
         firstRound: 'पहला चरण',
         secondRound: 'दूसरा चरण',
@@ -1837,7 +1837,7 @@ export const translations: Translations = {
       messageSignedDescription: signature => `Firma: ${signature.substring(0, 20)}...`,
       countdown: {
         heading: 'Elecciones presidenciales francesas de 2027',
-        tagline: 'Sin tonterías, solo lo necesario para votar.',
+        tagline: 'Solo lo necesario para votar.',
         registrationDeadline: 'Fecha límite de inscripción electoral',
         firstRound: 'Primera vuelta',
         secondRound: 'Segunda vuelta',
@@ -2332,7 +2332,7 @@ export const translations: Translations = {
       messageSignedDescription: signature => `Signature : ${signature.substring(0, 20)}...`,
       countdown: {
         heading: 'Présidentielle 2027',
-        tagline: 'Pas de bullshit, juste ce qu’il faut pour voter.',
+        tagline: 'Juste ce qu’il faut pour voter.',
         registrationDeadline: 'Date limite d’inscription sur les listes électorales',
         firstRound: '1er tour',
         secondRound: '2nd tour',
@@ -2830,7 +2830,7 @@ export const translations: Translations = {
       messageSignedDescription: signature => `التوقيع: ${signature.substring(0, 20)}...`,
       countdown: {
         heading: 'الانتخابات الرئاسية الفرنسية 2027',
-        tagline: 'بلا هراء، فقط ما تحتاجه للتصويت.',
+        tagline: 'فقط ما تحتاجه للتصويت.',
         registrationDeadline: 'الموعد النهائي للتسجيل في القوائم الانتخابية',
         firstRound: 'الجولة الأولى',
         secondRound: 'الجولة الثانية',
@@ -3292,7 +3292,7 @@ export const translations: Translations = {
       messageSignedDescription: signature => `স্বাক্ষর: ${signature.substring(0, 20)}...`,
       countdown: {
         heading: '২০২৭ ফরাসি রাষ্ট্রপতি নির্বাচন',
-        tagline: 'কোনো বাজে কথা নয়, ভোট দিতে যা দরকার শুধু তাই।',
+        tagline: 'ভোট দিতে যা দরকার শুধু তাই।',
         registrationDeadline: 'ভোটার নিবন্ধনের শেষ তারিখ',
         firstRound: 'প্রথম দফা',
         secondRound: 'দ্বিতীয় দফা',
@@ -3781,7 +3781,7 @@ export const translations: Translations = {
       messageSignedDescription: signature => `Подпись: ${signature.substring(0, 20)}...`,
       countdown: {
         heading: 'Президентские выборы во Франции 2027',
-        tagline: 'Без чуши — только то, что нужно, чтобы проголосовать.',
+        tagline: 'Только то, что нужно, чтобы проголосовать.',
         registrationDeadline: 'Крайний срок регистрации избирателей',
         firstRound: 'Первый тур',
         secondRound: 'Второй тур',
@@ -4271,7 +4271,7 @@ export const translations: Translations = {
       messageSignedDescription: signature => `Assinatura: ${signature.substring(0, 20)}...`,
       countdown: {
         heading: 'Eleições presidenciais francesas de 2027',
-        tagline: 'Sem enrolação, só o essencial para votar.',
+        tagline: 'Só o essencial para votar.',
         registrationDeadline: 'Prazo de inscrição no recenseamento eleitoral',
         firstRound: 'Primeiro turno',
         secondRound: 'Segundo turno',
@@ -4764,7 +4764,7 @@ export const translations: Translations = {
       messageSignedDescription: signature => `دستخط: ${signature.substring(0, 20)}...`,
       countdown: {
         heading: 'فرانسیسی صدارتی انتخابات 2027',
-        tagline: 'کوئی بکواس نہیں، صرف وہ جو ووٹ ڈالنے کے لیے درکار ہے۔',
+        tagline: 'صرف وہ جو ووٹ ڈالنے کے لیے درکار ہے۔',
         registrationDeadline: 'ووٹر رجسٹریشن کی آخری تاریخ',
         firstRound: 'پہلا مرحلہ',
         secondRound: 'دوسرا مرحلہ',
