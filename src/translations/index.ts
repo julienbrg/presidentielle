@@ -2388,7 +2388,7 @@ export const translations: Translations = {
 
       restoreBackupHeading: 'Restaurer depuis une sauvegarde',
       restoreBackupDescription:
-        "Si vous disposez d'un fichier de sauvegarde, vous pouvez restaurer votre portefeuille sans vous connecter au préalable.",
+        "Si vous disposez d'un fichier de sauvegarde, vous pouvez restaurer votre wallet sans vous connecter au préalable.",
       restoreBackupSyncHint:
         'Pour synchroniser avec un autre appareil : connectez-vous sur votre autre appareil, allez dans Réglages → Créer une sauvegarde pour télécharger un fichier de sauvegarde chiffré, puis importez-le ici et saisissez le même mot de passe.',
       restoringText: 'Restauration en cours...',
@@ -2446,15 +2446,15 @@ export const translations: Translations = {
       sessionHowItWorksText:
         "Chaque fois que vous vous connectez avec votre biométrie/code PIN, votre authentificateur libère un secret matériel (extension WebAuthn PRF) qui chiffre votre session sur cet appareil — rien de ce qui est stocké sur le disque ne peut recréer cette clé. Le compte à rebours redémarre à chaque connexion réelle : avec une durée de 7 jours, vous connecter aujourd'hui vous maintient connecté jusqu'à 7 jours à partir d'aujourd'hui, moment où il vous sera demandé une fois de vous authentifier et où la session sera rechiffrée avec une nouvelle clé.",
 
-      walletBackupHeading: 'Sauvegarde du portefeuille',
+      walletBackupHeading: 'Sauvegarde du wallet',
       walletBackupDescription:
-        "Créez des sauvegardes chiffrées de votre portefeuille pour ne jamais perdre l'accès",
+        "Créez des sauvegardes chiffrées de votre wallet pour ne jamais perdre l'accès",
       currentAccountBackupHeading: 'Compte actuel',
       loggedInAsLabel: 'Connecté en tant que :',
       loadingAddressesText: 'Chargement des adresses...',
       index0Label: 'Adresse index #0 :',
       mainAddressLabel:
-        "Adresse spécifique à l'origine, mode STANDARD, étiquetée MAIN (portefeuille par défaut) :",
+        "Adresse spécifique à l'origine, mode STANDARD, étiquetée MAIN (wallet par défaut) :",
       loadingText: 'Chargement...',
       securityStatusHeading: 'État de la sécurité',
       checkingStatusText: "Vérification de l'état de la sauvegarde...",
@@ -2469,41 +2469,40 @@ export const translations: Translations = {
       creatingText: 'Création en cours...',
       createButton: 'Créer une sauvegarde',
       restoreHeadingCard: 'Restaurer depuis une sauvegarde',
-      restoreDescriptionCard:
-        "Restaurez votre portefeuille à partir d'un fichier de sauvegarde chiffré",
+      restoreDescriptionCard: "Restaurez votre wallet à partir d'un fichier de sauvegarde chiffré",
       restoreButtonCard: 'Restaurer la sauvegarde',
       aboutBackupHeading: 'À propos de la sauvegarde côté client',
       aboutBackupPara1:
-        "Le secret principal de votre portefeuille (la phrase mnémonique) est généré et chiffré entièrement sur votre appareil. Le processus de sauvegarde récupère ces données chiffrées depuis le stockage local de votre navigateur à l'aide de votre mot de passe, puis les regroupe dans un fichier sécurisé à télécharger.",
+        "Le secret principal de votre wallet (la phrase mnémonique) est généré et chiffré entièrement sur votre appareil. Le processus de sauvegarde récupère ces données chiffrées depuis le stockage local de votre navigateur à l'aide de votre mot de passe, puis les regroupe dans un fichier sécurisé à télécharger.",
       aboutBackupPara2:
-        "La clé de chiffrement de votre portefeuille est dérivée à partir d'une signature WebAuthn, qui nécessite votre authentification biométrique (empreinte digitale, reconnaissance faciale) ou le code PIN de l'appareil. Cela signifie que même si quelqu'un accède aux données chiffrées stockées dans votre navigateur, il ne pourra pas les déchiffrer sans votre appareil physique et votre authentification.",
+        "La clé de chiffrement de votre wallet est dérivée à partir d'une signature WebAuthn, qui nécessite votre authentification biométrique (empreinte digitale, reconnaissance faciale) ou le code PIN de l'appareil. Cela signifie que même si quelqu'un accède aux données chiffrées stockées dans votre navigateur, il ne pourra pas les déchiffrer sans votre appareil physique et votre authentification.",
       aboutBackupPara3:
         "Votre fichier de sauvegarde est chiffré avec AES-256-GCM à l'aide d'une clé dérivée du mot de passe que vous fournissez. Conservez ce fichier en lieu sûr et n'oubliez pas votre mot de passe.",
       aboutBackupWarning:
-        "Si vous perdez l'accès à votre appareil, votre clé d'accès ET le fichier de sauvegarde/mot de passe, votre portefeuille ne pourra pas être récupéré.",
+        "Si vous perdez l'accès à votre appareil, votre clé d'accès ET le fichier de sauvegarde/mot de passe, votre wallet ne pourra pas être récupéré.",
 
       socialRecoveryHeading: 'Récupération sociale',
       socialRecoveryDescription:
-        'Répartissez la récupération de votre portefeuille entre des gardiens de confiance grâce au partage de secret de Shamir',
+        'Répartissez la récupération de votre wallet entre des gardiens de confiance grâce au partage de secret de Shamir',
       setupHeading: 'Configurer la récupération sociale',
       setupDescription: (threshold, count) =>
-        `Ajoutez des gardiens de confiance qui vous aideront à récupérer votre portefeuille. Vous aurez besoin de ${threshold} gardiens sur ${count || '?'} pour la récupération.`,
+        `Ajoutez des gardiens de confiance qui vous aideront à récupérer votre wallet. Vous aurez besoin de ${threshold} gardiens sur ${count || '?'} pour la récupération.`,
       guardianNameLabel: 'Nom du gardien *',
       guardianEmailLabel: 'E-mail du gardien (facultatif)',
       addGuardianButton: 'Ajouter un gardien',
       guardiansListHeading: n => `Gardiens (${n})`,
       removeGuardianAria: 'Supprimer le gardien',
       thresholdLabel: (threshold, count) => `Seuil de récupération : ${threshold} sur ${count}`,
-      thresholdDescription: 'Nombre de gardiens nécessaires pour récupérer votre portefeuille',
+      thresholdDescription: 'Nombre de gardiens nécessaires pour récupérer votre wallet',
       setupSocialRecoveryButton: (threshold, count) =>
         `Configurer la récupération sociale (${threshold} sur ${count || '?'})`,
       howItWorksRecoveryInfo: (count, threshold) =>
-        `Comment ça marche : la récupération de votre portefeuille sera divisée en ${count || '?'} parts chiffrées grâce au partage de secret de Shamir. Vous aurez besoin de ${threshold} gardiens pour combiner leurs parts et récupérer votre portefeuille. Aucun gardien ne peut accéder seul à votre portefeuille.`,
-      recoverWalletHeading: 'Récupérer le portefeuille',
+        `Comment ça marche : la récupération de votre wallet sera divisée en ${count || '?'} parts chiffrées grâce au partage de secret de Shamir. Vous aurez besoin de ${threshold} gardiens pour combiner leurs parts et récupérer votre wallet. Aucun gardien ne peut accéder seul à votre wallet.`,
+      recoverWalletHeading: 'Récupérer le wallet',
       hideButton: 'Masquer',
       showButton: 'Afficher',
       recoverDescription:
-        "Vous avez perdu l'accès à votre portefeuille ? Rassemblez les parts des gardiens pour le récupérer.",
+        "Vous avez perdu l'accès à votre wallet ? Rassemblez les parts des gardiens pour le récupérer.",
       shareCodeLabel: 'Code de part du gardien',
       sharePlaceholder:
         'Collez ici le JSON de la part du gardien (ex. : {"guardianId":"...","share":"..."})',
@@ -2520,12 +2519,12 @@ export const translations: Translations = {
       progressText: n =>
         `${n} part(s) collectée(s). Vous avez besoin d'au moins 2 parts pour tenter la récupération.`,
       recoveringText: 'Récupération en cours...',
-      recoverButton: n => `Récupérer le portefeuille (${n} parts)`,
+      recoverButton: n => `Récupérer le wallet (${n} parts)`,
       importantWarning:
         'Important : assurez-vous que les parts proviennent des bons gardiens. Des parts invalides feront échouer la récupération.',
       activeHeading: 'Récupération sociale active',
       activeDescription: (threshold, count) =>
-        `Votre portefeuille est protégé par une récupération à ${threshold} gardiens sur ${count}`,
+        `Votre wallet est protégé par une récupération à ${threshold} gardiens sur ${count}`,
       generateInviteButton: 'Générer une invitation',
       removeConfigQuestion:
         'Tous les gardiens ont-ils leur part ? Vous pouvez désormais supprimer la configuration des gardiens du stockage local. Les parts sont conservées en sécurité chez vos gardiens et peuvent être utilisées à tout moment pour la récupération.',
@@ -2539,14 +2538,14 @@ export const translations: Translations = {
         "Votre clé d'accès se synchronise automatiquement entre vos appareils grâce aux services de la plateforme",
       qrHeading: 'QR code de synchronisation',
       qrDescription:
-        'Générez un QR code contenant les adresses de votre portefeuille pour synchroniser ou vérifier facilement les informations de votre compte sur un autre appareil.',
+        'Générez un QR code contenant les adresses de votre wallet pour synchroniser ou vérifier facilement les informations de votre compte sur un autre appareil.',
       generateQrButton: 'Générer le QR code de synchronisation',
       qrNote:
-        'Remarque : ce QR code contient uniquement les adresses publiques de votre portefeuille. Il ne contient PAS vos clés privées ni votre phrase de récupération. Utilisez-le pour vérifier votre compte sur un autre appareil.',
+        'Remarque : ce QR code contient uniquement les adresses publiques de votre wallet. Il ne contient PAS vos clés privées ni votre phrase de récupération. Utilisez-le pour vérifier votre compte sur un autre appareil.',
       hideQrButton: 'Masquer le QR code',
       verifyHeading: 'Vérifier les données du QR code',
       verifyDescription:
-        "Collez la chaîne JSON issue d'un QR code scanné pour vérifier les adresses du portefeuille.",
+        "Collez la chaîne JSON issue d'un QR code scanné pour vérifier les adresses du wallet.",
       verifyPlaceholder:
         'Collez les données JSON ici (ex. : {"username":"...","ethereumAddress":"..."})',
       errorLabel: 'Erreur :',
@@ -2557,18 +2556,18 @@ export const translations: Translations = {
       mainTaggedLabel: 'Étiqueté MAIN :',
       openbarTaggedLabel: 'Étiqueté OPENBAR :',
       generatedLabel: 'Généré :',
-      linkWalletButton: "Lier ce portefeuille à votre compte à clé d'accès",
+      linkWalletButton: "Lier ce wallet à votre compte à clé d'accès",
       linkExplanation:
-        "Ce qui se passe lors de la liaison : les adresses du portefeuille seront enregistrées à la fois dans localStorage et IndexedDB, créant un lien persistant entre votre compte à clé d'accès et ce portefeuille HD. Cela vous permet de vérifier ou de synchroniser les données du portefeuille entre vos appareils.",
-      howQrWorksHeading: 'Comment fonctionne la synchronisation du portefeuille par QR code',
+        "Ce qui se passe lors de la liaison : les adresses du wallet seront enregistrées à la fois dans localStorage et IndexedDB, créant un lien persistant entre votre compte à clé d'accès et ce wallet HD. Cela vous permet de vérifier ou de synchroniser les données du wallet entre vos appareils.",
+      howQrWorksHeading: 'Comment fonctionne la synchronisation du wallet par QR code',
       qrStep1:
-        'Étape 1 : générer le QR code - Sur votre appareil principal, générez un QR code contenant les adresses publiques de votre portefeuille. Ce QR code peut être partagé sans risque car il ne contient que des informations publiques.',
+        'Étape 1 : générer le QR code - Sur votre appareil principal, générez un QR code contenant les adresses publiques de votre wallet. Ce QR code peut être partagé sans risque car il ne contient que des informations publiques.',
       qrStep2:
         "Étape 2 : scanner et vérifier - Sur votre appareil secondaire, scannez le QR code avec n'importe quelle application de scan, ou copiez manuellement les données JSON affichées dans le QR code.",
       qrStep3:
-        "Étape 3 : lier les portefeuilles - Collez les données JSON dans la zone de vérification ci-dessus et cliquez sur « Lier ce portefeuille ». Cela crée une connexion persistante entre votre compte à clé d'accès et les adresses du portefeuille HD.",
+        "Étape 3 : lier les wallets - Collez les données JSON dans la zone de vérification ci-dessus et cliquez sur « Lier ce wallet ». Cela crée une connexion persistante entre votre compte à clé d'accès et les adresses du wallet HD.",
       whatGetsStored:
-        'Ce qui est stocké : seules les adresses publiques du portefeuille sont stockées dans localStorage et IndexedDB. Vos clés privées et votre phrase de récupération restent sécurisées et ne sont jamais transmises ni stockées via ce mécanisme de synchronisation.',
+        'Ce qui est stocké : seules les adresses publiques du wallet sont stockées dans localStorage et IndexedDB. Vos clés privées et votre phrase de récupération restent sécurisées et ne sont jamais transmises ni stockées via ce mécanisme de synchronisation.',
       platformSyncHeading: "Synchronisation des clés d'accès par plateforme",
       platformSyncIntro:
         "Vos identifiants de clé d'accès se synchronisent automatiquement entre vos appareils au sein du même écosystème :",
@@ -2579,12 +2578,12 @@ export const translations: Translations = {
       hardwareSyncNote:
         'Clés matérielles : pas de synchronisation, conservez une sauvegarde chiffrée séparément',
       crossPlatformNote:
-        "Limitation multiplateforme : les clés d'accès ne se synchronisent pas entre différents écosystèmes (par exemple, d'iPhone vers Android). En revanche, les sauvegardes chiffrées sont entièrement multiplateformes - vous pouvez restaurer votre portefeuille sur n'importe quel appareil avec le fichier de sauvegarde et le mot de passe, quelle que soit la plateforme d'origine.",
+        "Limitation multiplateforme : les clés d'accès ne se synchronisent pas entre différents écosystèmes (par exemple, d'iPhone vers Android). En revanche, les sauvegardes chiffrées sont entièrement multiplateformes - vous pouvez restaurer votre wallet sur n'importe quel appareil avec le fichier de sauvegarde et le mot de passe, quelle que soit la plateforme d'origine.",
       bestPracticesHeading: 'Bonnes pratiques',
       practiceBackupFirst:
         'Créez toujours une sauvegarde chiffrée avant de synchroniser avec un nouvel appareil',
       practiceVerifyAddresses:
-        'Vérifiez que les adresses du portefeuille correspondent après la synchronisation',
+        'Vérifiez que les adresses du wallet correspondent après la synchronisation',
       practiceUseDebugTools:
         "Utilisez les outils de débogage et d'inspection du stockage pour vérifier que les données de synchronisation ont été correctement enregistrées",
       practiceNeverShareQr:
@@ -2594,13 +2593,13 @@ export const translations: Translations = {
 
       createBackupModalTitle: 'Entrez le mot de passe pour créer la sauvegarde',
       createBackupModalDescription:
-        'Veuillez entrer votre mot de passe pour créer la sauvegarde. Ceci est requis par le SDK w3pk pour accéder à vos données de portefeuille chiffrées.',
+        'Veuillez entrer votre mot de passe pour créer la sauvegarde. Ceci est requis par le SDK w3pk pour accéder à vos données de wallet chiffrées.',
       restoreBackupModalTitle: 'Entrez le mot de passe pour restaurer la sauvegarde',
       restoreBackupModalDescription:
         'Veuillez entrer le mot de passe que vous avez utilisé lors de la création de ce fichier de sauvegarde.',
-      chooseUsernameModalTitle: "Choisissez un nom d'utilisateur pour le portefeuille restauré",
+      chooseUsernameModalTitle: "Choisissez un nom d'utilisateur pour le wallet restauré",
       chooseUsernameModalDescription:
-        "Aucun identifiant existant trouvé sur cet appareil. Veuillez choisir un nom d'utilisateur pour inscrire votre portefeuille restauré avec une nouvelle clé d'accès.",
+        "Aucun identifiant existant trouvé sur cet appareil. Veuillez choisir un nom d'utilisateur pour inscrire votre wallet restauré avec une nouvelle clé d'accès.",
       usernameFormatError:
         "Le nom d'utilisateur doit comporter entre 3 et 50 caractères alphanumériques, avec tirets bas/tirets autorisés, et commencer/se terminer par un caractère alphanumérique.",
       restoringRegisteringText: 'Restauration et inscription en cours...',
@@ -2641,7 +2640,7 @@ export const translations: Translations = {
       recordClearedDescription: (db, store) => `Enregistrement supprimé de ${db}/${store}`,
       failedClearRecord: "Échec de la suppression de l'enregistrement",
       errorLoadingAddressesTitle: 'Erreur lors du chargement des adresses',
-      failedDeriveAddresses: 'Échec de la dérivation des adresses du portefeuille',
+      failedDeriveAddresses: 'Échec de la dérivation des adresses du wallet',
       errorLoadingBackupStatusTitle: "Erreur lors du chargement de l'état de la sauvegarde",
       failedCheckSecurityStatus: "Échec de la vérification de l'état de sécurité",
       accountRemovedTitle: 'Compte supprimé',
@@ -2656,14 +2655,13 @@ export const translations: Translations = {
       incompatibleBackupTitle: 'Version de sauvegarde incompatible',
       incompatibleBackupDescription:
         'Cette sauvegarde a été créée avec une ancienne version de w3pk. Veuillez créer une nouvelle sauvegarde avec la version actuelle.',
-      walletRestoredTitle: 'Portefeuille restauré !',
-      walletRestoredDescription: address =>
-        `Portefeuille restauré et remplacé avec succès : ${address}`,
+      walletRestoredTitle: 'wallet restauré !',
+      walletRestoredDescription: address => `wallet restauré et remplacé avec succès : ${address}`,
       usernameRequiredRestoreDescription:
-        "Veuillez entrer un nom d'utilisateur pour l'inscrire avec le portefeuille restauré.",
-      walletRestoredRegisteredTitle: 'Portefeuille restauré et inscrit !',
+        "Veuillez entrer un nom d'utilisateur pour l'inscrire avec le wallet restauré.",
+      walletRestoredRegisteredTitle: 'wallet restauré et inscrit !',
       walletRestoredRegisteredDescription: address =>
-        `Portefeuille restauré et inscrit avec succès : ${address}`,
+        `wallet restauré et inscrit avec succès : ${address}`,
       securityReportGeneratedTitle: 'Rapport de sécurité généré',
       securityReportGeneratedDescription: "Consultez l'analyse détaillée ci-dessous",
       inspectionFailedTitle: "Échec de l'inspection",
@@ -2694,35 +2692,33 @@ export const translations: Translations = {
         'Veuillez coller un code de part de gardien valide (format JSON)',
       notEnoughSharesTitle: 'Pas assez de parts',
       notEnoughSharesDescription:
-        "Vous avez besoin d'au moins 2 parts de gardien pour récupérer votre portefeuille",
+        "Vous avez besoin d'au moins 2 parts de gardien pour récupérer votre wallet",
       passwordRequiredRecoveryDescription:
         'Vous devez entrer votre mot de passe pour déchiffrer le fichier de sauvegarde',
       usernameRequiredRecoveryDescription:
-        "Vous devez fournir un nom d'utilisateur pour inscrire votre portefeuille récupéré",
-      walletRecoveredTitle: 'Portefeuille récupéré avec succès !',
+        "Vous devez fournir un nom d'utilisateur pour inscrire votre wallet récupéré",
+      walletRecoveredTitle: 'wallet récupéré avec succès !',
       walletRecoveredDescription: address =>
-        `Votre portefeuille a été récupéré et inscrit avec une nouvelle clé d'accès : ${address}`,
+        `Votre wallet a été récupéré et inscrit avec une nouvelle clé d'accès : ${address}`,
       fileLoadedTitle: 'Fichier chargé',
       fileLoadedDescription:
         "Part de gardien chargée depuis le fichier. Cliquez sur « Ajouter la part » pour l'ajouter.",
       failedReadGuardianFile: 'Échec de la lecture du fichier de part de gardien',
       cannotSaveTitle: "Impossible d'enregistrer",
       cannotSaveDescription: 'Données QR invalides ou utilisateur non authentifié',
-      walletLinkedTitle: 'Portefeuille lié avec succès !',
-      walletLinkedDescription: address =>
-        `Portefeuille ${address} lié à votre compte à clé d'accès`,
-      errorSavingLinkTitle: "Erreur lors de l'enregistrement du lien du portefeuille",
-      failedSaveSyncData:
-        "Échec de l'enregistrement des données de synchronisation du portefeuille",
+      walletLinkedTitle: 'wallet lié avec succès !',
+      walletLinkedDescription: address => `wallet ${address} lié à votre compte à clé d'accès`,
+      errorSavingLinkTitle: "Erreur lors de l'enregistrement du lien du wallet",
+      failedSaveSyncData: "Échec de l'enregistrement des données de synchronisation du wallet",
       recoveryPasswordPrompt:
         "Entrez le mot de passe que vous avez défini lors de la configuration de la récupération sociale.\n\nCe mot de passe n'a PAS été partagé avec les gardiens - vous l'avez défini lors de la configuration.",
       recoveryUsernamePrompt: address =>
-        `Choisissez un nom d'utilisateur pour votre nouvelle inscription de clé d'accès.\n\nRécupération du portefeuille : ${address}`,
+        `Choisissez un nom d'utilisateur pour votre nouvelle inscription de clé d'accès.\n\nRécupération du wallet : ${address}`,
     },
     header: {
       registerTitle: 'Créer un nouveau compte',
       walletInfoText:
-        'Un portefeuille Ethereum sera créé et stocké en toute sécurité sur votre appareil, protégé par votre biométrie ou votre code PIN grâce à',
+        'Un wallet Ethereum sera créé et stocké en toute sécurité sur votre appareil, protégé par votre biométrie ou votre code PIN grâce à',
       usernameLabel: "Nom d'utilisateur",
       usernamePlaceholder: "Entrez votre nom d'utilisateur",
       usernameError:
@@ -2762,7 +2758,7 @@ export const translations: Translations = {
     about: {
       headingPrefix: 'À propos',
       introPart1:
-        "w3pk est un SDK d'authentification Web3 sans mot de passe, doté de portefeuilles chiffrés et de fonctionnalités de confidentialité. Vous pouvez l'utiliser dans n'importe quelle application web JS/TS (Next.js, Vue, Angular, Svelte, …).",
+        "w3pk est un SDK d'authentification Web3 sans mot de passe, doté de wallets chiffrés et de fonctionnalités de confidentialité. Vous pouvez l'utiliser dans n'importe quelle application web JS/TS (Next.js, Vue, Angular, Svelte, …).",
       introPart2:
         "est un modèle d'application Next.js, n'hésitez pas à le forker et à construire ce que vous voulez !",
       emailBoxText:
@@ -2781,7 +2777,7 @@ export const translations: Translations = {
       feature2:
         "Isolation des clés spécifique à l'origine avec contrôle d'accès basé sur des étiquettes",
       feature3: 'Gestion des sessions (en mémoire + persistance optionnelle)',
-      feature4: 'Génération de portefeuille HD (BIP39/BIP44)',
+      feature4: 'Génération de wallet HD (BIP39/BIP44)',
       feature5: 'Dérivation multi-adresses avec modes de sécurité (STANDARD/STRICT/YOLO)',
       feature6: 'Plusieurs méthodes de signature (EIP-191, SIWE/EIP-4361, EIP-712, rawHash)',
       feature7:
@@ -2792,8 +2788,7 @@ export const translations: Translations = {
         'Primitives ZK (génération et vérification de preuves à divulgation nulle de connaissance)',
       feature11: 'Support Chainlist (plus de 2390 réseaux)',
       feature12: 'Détection de réseau EIP-7702 (plus de 329 réseaux)',
-      feature13:
-        'Intégration de portefeuille externe (déléguer MetaMask/Ledger à w3pk via EIP-7702)',
+      feature13: 'Intégration de wallet externe (déléguer MetaMask/Ledger à w3pk via EIP-7702)',
       feature14: "Mode PRIMARY EIP-7951 (signature par clé d'accès P-256)",
       feature15: 'Vérification de build (hachage CID IPFS + registre onchain maintenu par une DAO)',
       feature16:
