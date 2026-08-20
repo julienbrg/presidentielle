@@ -3,22 +3,22 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   metadataBase: new URL('https://w3pk.w3hc.org'),
 
-  title: 'presidentielle',
-  description: 'All about the 2027 French presidential election',
+  title: 'Présidentielle 2027',
+  description: "Pour voter, il faut commencer par s'inscrire... ",
 
-  keywords: ['presidentielle', 'w3pk', 'WebAuthn', 'Next.js', 'Web3', 'Ethereum'],
-  authors: [{ name: 'W3HC', url: 'https://github.com/w3hc' }],
+  keywords: ['w3pk', 'WebAuthn', 'Next.js', 'Web3', 'Ethereum'],
+  authors: [{ name: 'julienbrg', url: 'https://github.com/julienbrg' }],
 
   openGraph: {
-    title: 'presidentielle',
-    description: 'All about the 2027 French presidential election',
-    siteName: 'presidentielle',
+    title: 'Présidentielle 2027',
+    description: "Pour voter, il faut commencer par s'inscrire... ",
+    siteName: 'Présidentielle 2027',
     images: [
       {
         url: '/huangshan.png',
         width: 1200,
         height: 630,
-        alt: 'All about the 2027 French presidential election',
+        alt: "Pour voter, il faut commencer par s'inscrire... ",
       },
     ],
     locale: 'en_US',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'presidentielle',
-    description: 'All about the 2027 French presidential election',
+    description: "Pour voter, il faut commencer par s'inscrire... ",
     images: ['/huangshan.png'],
     creator: '@julienbrg',
   },
