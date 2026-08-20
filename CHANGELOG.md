@@ -6,6 +6,7 @@
 
 - Homepage « Suis-je inscrit·e ? » button now uses the brand accent color (`brandColors.accent`) instead of the Chakra blue palette, and sizes to its label instead of stretching full width.
 - More breathing room at the bottom of the homepage (`pb={48}` instead of symmetric `py={16}`).
+- Countdown tagline: dropped the opening « Pas de bullshit » ("No bullshit") clause in all 10 languages; the tagline now reads « Juste ce qu’il faut pour voter. » ("Just what you need to vote.").
 - Wording: use the singular « présidentielle » everywhere (header title, French countdown heading, SPECS.md title and tagline) instead of « présidentielles ».
 - Updated the 2027 election calendar in `src/utils/election.ts` to the official dates set in the Conseil des ministres of 1 July 2026: registration deadline on 12 March 2027 (single deadline for online and in-person), 1st round on 18 April 2027, 2nd round on 2 May 2027 (previously provisional projections: 3 March / 11 April / 25 April).
 
