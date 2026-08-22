@@ -164,6 +164,7 @@ type TranslationKeys = {
     aboutBackupPara2: string
     aboutBackupPara3: string
     aboutBackupWarning: string
+    antiPhishingWarning: string
 
     socialRecoveryHeading: string
     socialRecoveryDescription: string
@@ -592,6 +593,8 @@ export const translations: Translations = {
         'Your backup file is encrypted using AES-256-GCM with a key derived from the password you provide. Store this file securely and remember your password.',
       aboutBackupWarning:
         'If you lose access to your device, passkey, AND the backup file/password, your wallet cannot be recovered.',
+      antiPhishingWarning:
+        'Anti-phishing notice: only ever restore a backup on www.presidentielle.fun. Never enter your backup file and password on any other website — anyone holding both can take control of your wallet.',
 
       socialRecoveryHeading: 'Social Recovery',
       socialRecoveryDescription:
@@ -1054,6 +1057,8 @@ export const translations: Translations = {
         '您的备份文件使用 AES-256-GCM 加密，密钥由您提供的密码派生而来。请妥善保管此文件并记住您的密码。',
       aboutBackupWarning:
         '如果您同时失去对设备、通行密钥以及备份文件/密码的访问权限，您的钱包将无法恢复。',
+      antiPhishingWarning:
+        '防钓鱼提示：只能在 www.presidentielle.fun 上恢复备份。切勿在任何其他网站输入您的备份文件和密码——任何同时持有两者的人都可以控制您的钱包。',
 
       socialRecoveryHeading: '社交恢复',
       socialRecoveryDescription: '使用 Shamir 秘密共享方案，将您的钱包恢复权限分配给受信任的监护人',
@@ -1503,6 +1508,8 @@ export const translations: Translations = {
         'आपकी बैकअप फ़ाइल आपके द्वारा दिए गए पासवर्ड से प्राप्त एक कुंजी के साथ AES-256-GCM का उपयोग करके एन्क्रिप्ट की जाती है। इस फ़ाइल को सुरक्षित रूप से संग्रहीत करें और अपना पासवर्ड याद रखें।',
       aboutBackupWarning:
         'यदि आप अपने डिवाइस, पासकी, और बैकअप फ़ाइल/पासवर्ड तक पहुंच खो देते हैं, तो आपका वॉलेट पुनर्प्राप्त नहीं किया जा सकता।',
+      antiPhishingWarning:
+        'फ़िशिंग-रोधी सूचना: बैकअप केवल www.presidentielle.fun पर ही पुनर्स्थापित करें। अपनी बैकअप फ़ाइल और पासवर्ड कभी किसी अन्य वेबसाइट पर दर्ज न करें — जिसके पास दोनों हों, वह आपके वॉलेट पर नियंत्रण पा सकता है।',
 
       socialRecoveryHeading: 'सामाजिक रिकवरी',
       socialRecoveryDescription:
@@ -1987,6 +1994,8 @@ export const translations: Translations = {
         'Tu archivo de copia de seguridad se cifra con AES-256-GCM utilizando una clave derivada de la contraseña que proporciones. Guarda este archivo de forma segura y recuerda tu contraseña.',
       aboutBackupWarning:
         'Si pierdes el acceso a tu dispositivo, a tu clave de acceso Y al archivo/contraseña de copia de seguridad, tu billetera no podrá recuperarse.',
+      antiPhishingWarning:
+        'Aviso antiphishing: restaura tu copia de seguridad únicamente en www.presidentielle.fun. Nunca introduzcas tu archivo de copia de seguridad y tu contraseña en ningún otro sitio web: cualquiera que tenga ambos puede tomar el control de tu billetera.',
 
       socialRecoveryHeading: 'Recuperación social',
       socialRecoveryDescription:
@@ -2480,6 +2489,8 @@ export const translations: Translations = {
         "Votre fichier de sauvegarde est chiffré avec AES-256-GCM à l'aide d'une clé dérivée du mot de passe que vous fournissez. Conservez ce fichier en lieu sûr et n'oubliez pas votre mot de passe.",
       aboutBackupWarning:
         "Si vous perdez l'accès à votre appareil, votre clé d'accès ET le fichier de sauvegarde/mot de passe, votre wallet ne pourra pas être récupéré.",
+      antiPhishingWarning:
+        'Avis anti-hameçonnage : ne restaurez jamais une sauvegarde ailleurs que sur www.presidentielle.fun. Ne saisissez jamais votre fichier de sauvegarde et votre mot de passe sur un autre site — quiconque détient les deux peut prendre le contrôle de votre wallet.',
 
       socialRecoveryHeading: 'Récupération sociale',
       socialRecoveryDescription:
@@ -2966,6 +2977,8 @@ export const translations: Translations = {
         'يتم تشفير ملف النسخة الاحتياطية باستخدام AES-256-GCM بمفتاح مشتق من كلمة المرور التي تقدمها. احتفظ بهذا الملف بأمان وتذكر كلمة مرورك.',
       aboutBackupWarning:
         'إذا فقدت الوصول إلى جهازك ومفتاح المرور وملف النسخة الاحتياطية/كلمة المرور معاً، فلن يمكن استرداد محفظتك.',
+      antiPhishingWarning:
+        'تنبيه ضد التصيّد: لا تستعد نسختك الاحتياطية إلا على www.presidentielle.fun. لا تُدخل أبداً ملف النسخة الاحتياطية وكلمة المرور في أي موقع آخر — فمن يحصل عليهما معاً يمكنه السيطرة على محفظتك.',
 
       socialRecoveryHeading: 'الاسترداد الاجتماعي',
       socialRecoveryDescription:
@@ -3432,6 +3445,8 @@ export const translations: Translations = {
         'আপনার ব্যাকআপ ফাইলটি AES-256-GCM ব্যবহার করে এনক্রিপ্ট করা হয়, যার কী আপনার দেওয়া পাসওয়ার্ড থেকে তৈরি হয়। এই ফাইলটি নিরাপদে সংরক্ষণ করুন এবং আপনার পাসওয়ার্ড মনে রাখুন।',
       aboutBackupWarning:
         'যদি আপনি আপনার ডিভাইস, পাসকী, এবং ব্যাকআপ ফাইল/পাসওয়ার্ড — এই সবগুলির অ্যাক্সেস হারান, তাহলে আপনার ওয়ালেট পুনরুদ্ধার করা যাবে না।',
+      antiPhishingWarning:
+        'ফিশিং-বিরোধী সতর্কতা: ব্যাকআপ শুধুমাত্র www.presidentielle.fun-এ পুনরুদ্ধার করুন। আপনার ব্যাকআপ ফাইল ও পাসওয়ার্ড কখনও অন্য কোনও ওয়েবসাইটে দেবেন না — দুটোই যার হাতে থাকবে, সে আপনার ওয়ালেটের নিয়ন্ত্রণ নিতে পারবে।',
 
       socialRecoveryHeading: 'সামাজিক পুনরুদ্ধার',
       socialRecoveryDescription:
@@ -3922,6 +3937,8 @@ export const translations: Translations = {
         'Ваш файл резервной копии зашифрован с использованием AES-256-GCM с ключом, полученным из указанного вами пароля. Храните этот файл в надёжном месте и не забывайте пароль.',
       aboutBackupWarning:
         'Если вы одновременно потеряете доступ к устройству, ключу доступа И файлу резервной копии/паролю, восстановить кошелёк будет невозможно.',
+      antiPhishingWarning:
+        'Внимание, фишинг: восстанавливайте резервную копию только на www.presidentielle.fun. Никогда не вводите файл резервной копии и пароль на других сайтах — тот, у кого есть и то и другое, может получить контроль над вашим кошельком.',
 
       socialRecoveryHeading: 'Социальное восстановление',
       socialRecoveryDescription:
@@ -4414,6 +4431,8 @@ export const translations: Translations = {
         'O seu ficheiro de cópia de segurança é encriptado utilizando AES-256-GCM com uma chave derivada da senha que fornecer. Guarde este ficheiro em segurança e memorize a sua senha.',
       aboutBackupWarning:
         'Se perder o acesso ao seu dispositivo, à chave de acesso E ao ficheiro/senha da cópia de segurança, a sua carteira não poderá ser recuperada.',
+      antiPhishingWarning:
+        'Aviso antiphishing: restaure a sua cópia de segurança apenas em www.presidentielle.fun. Nunca introduza o ficheiro de cópia de segurança e a senha noutro site — quem tiver ambos pode assumir o controlo da sua carteira.',
 
       socialRecoveryHeading: 'Recuperação social',
       socialRecoveryDescription:
@@ -4902,6 +4921,8 @@ export const translations: Translations = {
         'آپ کی بیک اپ فائل AES-256-GCM کا استعمال کرتے ہوئے اس کلید سے خفیہ کی جاتی ہے جو آپ کے فراہم کردہ پاس ورڈ سے حاصل کی جاتی ہے۔ اس فائل کو محفوظ طریقے سے رکھیں اور اپنا پاس ورڈ یاد رکھیں۔',
       aboutBackupWarning:
         'اگر آپ اپنے ڈیوائس، پاس کی، اور بیک اپ فائل/پاس ورڈ تک رسائی کھو دیتے ہیں، تو آپ کا والیٹ بحال نہیں کیا جا سکتا۔',
+      antiPhishingWarning:
+        'فشنگ سے بچاؤ کی تنبیہ: اپنا بیک اپ صرف www.presidentielle.fun پر بحال کریں۔ اپنی بیک اپ فائل اور پاس ورڈ کبھی کسی اور ویب سائٹ پر درج نہ کریں — جس کے پاس دونوں ہوں وہ آپ کے والیٹ پر قبضہ کر سکتا ہے۔',
 
       socialRecoveryHeading: 'سماجی بحالی',
       socialRecoveryDescription:

@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import {
   Box,
+  Button,
   Heading,
   HStack,
   Icon,
@@ -34,7 +35,11 @@ const getInstalledW3pkVersion = (): string => {
 }
 
 export const BuildVerification = () => {
-  const [isVerifying, setIsVerifying] = useState(true)
+  // Privacy: no network request is made until the user explicitly starts the
+  // verification — checking the onchain registry contacts a public Optimism
+  // RPC endpoint, which necessarily sees the visitor's IP address.
+  const [hasStarted, setHasStarted] = useState(false)
+  const [isVerifying, setIsVerifying] = useState(false)
   const [isVerified, setIsVerified] = useState<boolean | null>(null)
   const [currentHash, setCurrentHash] = useState<string>('')
   const [trustedHash, setTrustedHash] = useState<string>('')
@@ -42,67 +47,63 @@ export const BuildVerification = () => {
   const [error, setError] = useState<string>('')
   const hasVerified = useRef(false)
 
-  useEffect(() => {
+  const verifyBuild = async () => {
     if (hasVerified.current) return
+    hasVerified.current = true
+    setHasStarted(true)
+    setIsVerifying(true)
+    setError('')
 
-    const verifyBuild = async () => {
-      hasVerified.current = true
-      setIsVerifying(true)
-      setError('')
+    try {
+      // Get current build hash
+      const hash = await getCurrentBuildHash()
+      setCurrentHash(hash)
 
-      try {
-        // Get current build hash
-        const hash = await getCurrentBuildHash()
-        setCurrentHash(hash)
+      // Get installed w3pk version from package.json
+      const version = getInstalledW3pkVersion()
+      setInstalledVersion(version)
 
-        // Get installed w3pk version from package.json
-        const version = getInstalledW3pkVersion()
-        setInstalledVersion(version)
+      // Fetch trusted hash from onchain registry for the installed version
+      const provider = new ethers.JsonRpcProvider(OPTIMISM_RPC)
+      const registry = new ethers.Contract(REGISTRY_ADDRESS, REGISTRY_ABI, provider)
+      const onchainCid = await registry.getCidByVersion(`v${version}`)
+      setTrustedHash(onchainCid)
 
-        // Fetch trusted hash from onchain registry for the installed version
-        const provider = new ethers.JsonRpcProvider(OPTIMISM_RPC)
-        const registry = new ethers.Contract(REGISTRY_ADDRESS, REGISTRY_ABI, provider)
-        const onchainCid = await registry.getCidByVersion(`v${version}`)
-        setTrustedHash(onchainCid)
+      // Verify against onchain hash
+      const verified = hash === onchainCid
+      setIsVerified(verified)
 
-        // Verify against onchain hash
-        const verified = hash === onchainCid
-        setIsVerified(verified)
-
-        // Log results to console for manual verification
-        console.log('🔐 W3PK Build Verification')
-        console.log('═'.repeat(50))
-        console.log('Installed version:', version)
-        console.log('Current build hash:', hash)
-        console.log('Expected hash:    ', onchainCid)
-        console.log('Verification:     ', verified ? '✅ VERIFIED' : '❌ FAILED')
-        console.log('═'.repeat(50))
-        console.log('Registry contract:', REGISTRY_ADDRESS)
-        console.log('Network:          OP Mainnet')
-        console.log('═'.repeat(50))
-        console.log('Verify manually in console:')
-        console.log('')
-        console.log('  await window.w3pk.getCurrentBuildHash()')
-        console.log('')
-        // AI Inspection feature (disabled)
-        // console.log('Security inspection:')
-        // console.log('')
-        // console.log('  await window.w3pk.inspectNow()')
-        // console.log('  await window.w3pk.inspect()')
-        // console.log('')
-        console.log('Full SDK available at window.w3pk')
-        console.log('═'.repeat(50))
-      } catch (err) {
-        console.error('Build verification error:', err)
-        setError((err as Error).message || 'Failed to verify build')
-        setIsVerified(false)
-      } finally {
-        setIsVerifying(false)
-      }
+      // Log results to console for manual verification
+      console.log('🔐 W3PK Build Verification')
+      console.log('═'.repeat(50))
+      console.log('Installed version:', version)
+      console.log('Current build hash:', hash)
+      console.log('Expected hash:    ', onchainCid)
+      console.log('Verification:     ', verified ? '✅ VERIFIED' : '❌ FAILED')
+      console.log('═'.repeat(50))
+      console.log('Registry contract:', REGISTRY_ADDRESS)
+      console.log('Network:          OP Mainnet')
+      console.log('═'.repeat(50))
+      console.log('Verify manually in console:')
+      console.log('')
+      console.log('  await window.w3pk.getCurrentBuildHash()')
+      console.log('')
+      // AI Inspection feature (disabled)
+      // console.log('Security inspection:')
+      // console.log('')
+      // console.log('  await window.w3pk.inspectNow()')
+      // console.log('  await window.w3pk.inspect()')
+      // console.log('')
+      console.log('Full SDK available at window.w3pk')
+      console.log('═'.repeat(50))
+    } catch (err) {
+      console.error('Build verification error:', err)
+      setError((err as Error).message || 'Failed to verify build')
+      setIsVerified(false)
+    } finally {
+      setIsVerifying(false)
     }
-
-    verifyBuild()
-  }, [])
+  }
 
   return (
     <Box bg="gray.900" p={6} borderRadius="lg" border="1px solid" borderColor={brandColors.primary}>
@@ -111,7 +112,7 @@ export const BuildVerification = () => {
           <Icon as={FiShield} color={brandColors.primary} boxSize={6} />
           <Heading size="md">W3PK Build Verification</Heading>
         </HStack>
-        {isVerifying ? (
+        {!hasStarted ? null : isVerifying ? (
           <Spinner size="md" />
         ) : isVerified === true ? (
           <Icon as={MdCheckCircle} color="green.400" boxSize={6} />
@@ -121,7 +122,29 @@ export const BuildVerification = () => {
       </HStack>
 
       <VStack align="stretch" gap={3}>
-        {isVerifying ? (
+        {!hasStarted ? (
+          <Box bg="gray.800/50" p={4} borderRadius="md">
+            <Text fontSize="sm" color="gray.300" mb={3}>
+              Check that this app runs an authentic, unmodified version of W3PK by comparing its
+              build hash against the onchain registry on OP Mainnet.
+            </Text>
+            <Text fontSize="xs" color="gray.500" mb={3}>
+              Privacy note: nothing is sent anywhere until you click. Verifying makes a single
+              read-only request to the public Optimism RPC endpoint ({OPTIMISM_RPC}), which — like
+              any server you contact — can see your IP address. No other data is transmitted.
+            </Text>
+            <Button
+              size="sm"
+              bg={brandColors.primary}
+              color="white"
+              _hover={{ bg: brandColors.secondary }}
+              onClick={verifyBuild}
+            >
+              <Icon as={FiShield} />
+              Verify now
+            </Button>
+          </Box>
+        ) : isVerifying ? (
           <HStack justify="center" py={4}>
             <Spinner size="md" />
             <Text fontSize="sm" color="gray.400">

@@ -2,11 +2,7 @@
 
 # presidentielle
 
-All about the 2027 French presidential election
-
-## Features
-
-- **Homepage countdown** to the next civic deadline (voter-registration deadline, then 1st and 2nd rounds), with a link to the official [service-public.fr voter-registration check](https://www.service-public.fr/particuliers/vosdroits/services-en-ligne-et-formulaires/ISE). No login required. The official dates (1st round on 18 April 2027, 2nd round on 2 May 2027, registration deadline on 12 March 2027) live in [`src/utils/election.ts`](src/utils/election.ts).
+All about the 2027 French presidential election.
 
 ## Install
 
@@ -29,3 +25,11 @@ pnpm build
 ## License
 
 GPL-3.0
+
+## Contact
+
+**Julien Béranger** ([GitHub](https://github.com/julienbrg))
+
+- Element: [@julienbrg:matrix.org](https://matrix.to/#/@julienbrg:matrix.org)
+- Farcaster: [julien-](https://warpcast.com/julien-)
+- Telegram: [@julienbrg](https://t.me/julienbrg)

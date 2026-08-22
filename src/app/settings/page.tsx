@@ -1006,6 +1006,9 @@ const SettingsPage = () => {
             <Text fontSize="sm" color="gray.400" mb={4}>
               {t.settings.restoreBackupSyncHint}
             </Text>
+            <Box p={3} bg="yellow.900/90" borderRadius="md" mb={4}>
+              <Text fontSize="xs">{t.settings.antiPhishingWarning}</Text>
+            </Box>
             <Button
               bg={brandColors.primary}
               color="white"
@@ -2567,6 +2570,9 @@ const SettingsPage = () => {
                   <Text>{t.settings.aboutBackupPara3}</Text>
                   <Box p={4} bg="yellow.900/90" mt={2}>
                     <Text fontSize="xs">{t.settings.aboutBackupWarning}</Text>
+                  </Box>
+                  <Box p={4} bg="yellow.900/90">
+                    <Text fontSize="xs">{t.settings.antiPhishingWarning}</Text>
                   </Box>
                 </VStack>
               </Box>
