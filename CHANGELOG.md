@@ -2,7 +2,22 @@
 
 ## Unreleased
 
+### Added
+
+- `docs/SECURITY_AUDIT_AUG_22_2026.md`: formal security audit of the site (source code + passive checks of the production deployment on Vercel). No critical or high-severity vulnerability found; documents residual risks (supply chain, user-facing phishing risk on wallet backups, operational hygiene), the mitigations in place, and a table of outstanding publisher-side actions.
+- **Security hardening**:
+  - HTTP security headers set for every route in `next.config.ts`: Content-Security-Policy (`default-src 'self'`, `connect-src` limited to same-origin + the Optimism RPC and w3pk endpoints, `frame-ancestors 'none'`, `object-src 'none'`), `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, restrictive `Permissions-Policy`, and HSTS extended with `includeSubDomains; preload`. In development only, `script-src` additionally allows `'unsafe-eval'` (React's development build uses `eval()` for debugging features; production builds never include it).
+  - `pnpm.overrides` in `package.json` forcing patched versions of transitive dependencies with known advisories (`underscore`, `ws`, `brace-expansion` v1/v2, `js-yaml`, `esbuild`): `pnpm audit` drops from 10 advisories (7 high) to 1 low (`elliptic`, no patched version exists, not reachable in this deployment).
+  - `.github/dependabot.yml`: weekly automated dependency updates (npm + GitHub Actions).
+  - `pnpm-workspace.yaml` with `minimumReleaseAge: 4320` (3 days): freshly published — potentially hijacked — package versions cannot be installed immediately (`w3pk`, published by this project's own maintainer, is excluded).
+  - Anti-phishing notice in the wallet backup/restore UI (`/settings`, both the unauthenticated restore section and the backup tab), in all 10 languages: backups must only ever be restored on `www.presidentielle.fun`; entering the backup file and password anywhere else hands over the wallet.
+  - README: new "Security" section pointing to the audit and summarizing the hardening in place.
+
 ### Changed
+
+- **Privacy — W3PK build verification is now opt-in**: `BuildVerification` no longer contacts the public Optimism RPC (`mainnet.optimism.io`) automatically on mount. It now starts in an idle state with an explicit "Verify now" button and a privacy note explaining that clicking makes a single read-only request whose recipient (like any server) sees the visitor's IP. No network request leaves the page without user action, so simply visiting `/settings` reveals nothing to any third party.
+- **CGU (`/conditions`) privacy overhaul**: section 5 becomes « Données personnelles et vie privée » and now states precisely that the site collects zero personal data, runs no audience measurement, no trackers (first- or third-party), no tracking cookies, no ads and no third-party scripts; that the publisher has no way of knowing who visits; that fonts/assets are self-hosted (no Google Fonts/CDN requests); that preferences live only in `localStorage` (inspectable/erasable from `/settings`); that passkeys stay on-device with no server-side accounts; that the only outbound connections are explicit user actions (external links, opt-in build verification); an honest note about host-level technical logs the publisher does not exploit; and that no consent banner is required since nothing is collected. New section 6 « Nos engagements : les principes CROPS » commits the site to Ethereum's CROPS principles (Censorship Resistant, Open source, Private, Secure); former sections 6–10 renumbered 7–11.
+- README: new "Privacy" section documenting the zero-data/no-tracker posture and the CROPS commitments, with a link to the Ethereum Foundation mandate and to `/conditions`.
 
 - Metadata cleanup in `src/app/metadata.ts`: replaced leftover template keywords (`w3pk`, `WebAuthn`, `Web3`…) with election-related ones, fixed the Open Graph locale (`en_US` → `fr_FR`), and removed the placeholder Google site-verification entry.
 - Header login/logout button is commented out (temporarily hidden); the passkey auth logic and registration modal remain in the code.

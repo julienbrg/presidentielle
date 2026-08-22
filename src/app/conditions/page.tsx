@@ -63,38 +63,53 @@ const sections: ConditionsSection[] = [
     ],
   },
   {
-    heading: '5. Données personnelles',
+    heading: '5. Données personnelles et vie privée',
     body: [
-      "Le site ne collecte pas de données personnelles à des fins publicitaires et n'utilise pas de traceurs tiers à des fins de profilage. Les préférences éventuellement enregistrées (comme la langue d'affichage) sont stockées localement dans votre navigateur et ne sont pas transmises à l'éditeur.",
-      'Si des fonctionnalités de compte (par exemple via des passkeys) sont proposées, les identifiants correspondants sont créés et conservés sur votre appareil. Vous êtes responsable de la garde de votre appareil et de vos éventuelles sauvegardes.',
+      "Le site ne collecte aucune donnée personnelle. Il ne comporte aucun outil de mesure d'audience, aucun traceur (première ou tierce partie), aucun cookie de suivi, aucune publicité, aucun script tiers et aucun formulaire de collecte. L'éditeur ne sait pas qui visite le site : il ne reçoit, ne stocke et ne consulte aucune information sur les visiteurs (adresse IP, identifiant, historique de navigation ou autre).",
+      "Les polices de caractères et l'ensemble des ressources du site sont servies directement par le site lui-même : votre navigateur ne contacte ni Google Fonts, ni aucun CDN ou service tiers lors de la consultation des pages.",
+      "Les préférences éventuellement enregistrées (comme la langue d'affichage) sont stockées uniquement en local dans votre navigateur (localStorage) et ne sont jamais transmises à l'éditeur ni à quiconque. Vous pouvez les inspecter et les effacer à tout moment depuis la page Paramètres du site ou les réglages de votre navigateur.",
+      "Si des fonctionnalités de compte (par exemple via des passkeys) sont proposées, les identifiants correspondants sont créés et conservés exclusivement sur votre appareil : aucun compte n'est créé côté serveur. Vous êtes responsable de la garde de votre appareil et de vos éventuelles sauvegardes.",
+      "Les seules connexions sortantes possibles résultent d'une action explicite de votre part : cliquer sur un lien externe (voir la section « Liens externes »), ou lancer volontairement la vérification cryptographique du module d'authentification depuis la page Paramètres, qui effectue une unique requête en lecture vers un nœud public du réseau Optimism. Comme tout serveur que vous contactez, celui-ci voit alors votre adresse IP ; aucune autre donnée n'est transmise.",
+      "Comme tout site web, le site est servi par un hébergeur dont l'infrastructure peut produire des journaux techniques strictement nécessaires à l'acheminement des pages. L'éditeur n'exploite pas ces journaux, n'y adjoint aucun dispositif de suivi et ne cherche en aucun cas à identifier les visiteurs.",
+      "Le site ne traitant aucune donnée personnelle, aucun bandeau de consentement (cookies) n'est requis et aucune donnée ne peut être communiquée, vendue ou transférée à des tiers — il n'y en a pas. Pour toute question relative à la vie privée, vous pouvez contacter l'éditeur (voir la section « Éditeur du site »).",
     ],
   },
   {
-    heading: '6. Liens externes',
+    heading: '6. Nos engagements : les principes CROPS',
+    body: [
+      "Le site s'engage à respecter les principes CROPS (Censorship Resistance, Open source, Privacy, Security — résistance à la censure, code ouvert, vie privée, sécurité) formulés par la Fondation Ethereum, appliqués ici à un simple site d'information :",
+      "Résistance à la censure : le contenu est librement accessible, sans compte ni condition, et le code source public permet à quiconque de répliquer et redéployer le site à l'identique si celui-ci venait à être rendu inaccessible.",
+      "Open source : l'intégralité du code est publiée sous licence GPL-3.0 et auditable par tous. Ce que le site fait — et surtout ce qu'il ne fait pas (traceurs, collecte) — est vérifiable dans le code, pas seulement affirmé dans ces CGU.",
+      "Vie privée (privacy) : le site fonctionne sans savoir qui le visite. Zéro donnée personnelle collectée, zéro traceur, zéro mesure d'audience, comme détaillé à la section précédente. La vie privée est le réglage par défaut, pas une option.",
+      "Sécurité : l'authentification optionnelle repose sur les passkeys (WebAuthn), sans mot de passe ni base de données de comptes ; les clés sont générées et conservées sur votre appareil. L'intégrité du module d'authentification (w3pk) peut être vérifiée cryptographiquement par chacun, à la demande, contre un registre public onchain.",
+    ],
+  },
+  {
+    heading: '7. Liens externes',
     body: [
       "Le site contient des liens vers des sites tiers, notamment des sites officiels de l'administration française. Ces liens sont fournis à titre de commodité : l'éditeur n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou leur disponibilité.",
     ],
   },
   {
-    heading: '7. Propriété intellectuelle',
+    heading: '8. Propriété intellectuelle',
     body: [
       'Le code source du site est publié sous licence GPL-3.0 : vous pouvez le consulter, le modifier et le redistribuer dans les conditions prévues par cette licence. Sauf mention contraire, les contenus éditoriaux du site peuvent être librement partagés à des fins non commerciales, sous réserve de citer la source.',
     ],
   },
   {
-    heading: '8. Responsabilité',
+    heading: '9. Responsabilité',
     body: [
       "L'utilisation du site se fait sous votre seule responsabilité. L'éditeur ne saurait être tenu responsable des dommages directs ou indirects résultant de l'utilisation du site, de l'impossibilité d'y accéder, ou de l'usage d'informations qui y sont publiées.",
     ],
   },
   {
-    heading: '9. Modification des conditions',
+    heading: '10. Modification des conditions',
     body: [
       "L'éditeur peut modifier les présentes CGU à tout moment. La version applicable est celle publiée sur cette page à la date de votre consultation. En cas de modification substantielle, la date de mise à jour ci-dessous sera actualisée.",
     ],
   },
   {
-    heading: '10. Droit applicable',
+    heading: '11. Droit applicable',
     body: [
       'Les présentes CGU sont soumises au droit français. Tout litige relatif à leur interprétation ou à leur exécution relève des juridictions françaises compétentes.',
     ],
