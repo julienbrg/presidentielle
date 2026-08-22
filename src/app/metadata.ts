@@ -1,12 +1,20 @@
 import { Metadata } from 'next'
 
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.presidentielle.fun'
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://w3pk.w3hc.org'),
+  metadataBase: new URL(SITE_URL),
 
   title: 'Présidentielle 2027',
   description: "Pour voter, il faut commencer par s'inscrire... ",
 
-  keywords: ['w3pk', 'WebAuthn', 'Next.js', 'Web3', 'Ethereum'],
+  keywords: [
+    'présidentielle 2027',
+    'élection présidentielle',
+    'voter',
+    'inscription listes électorales',
+    'France',
+  ],
   authors: [{ name: 'julienbrg', url: 'https://github.com/julienbrg' }],
 
   openGraph: {
@@ -21,7 +29,7 @@ export const metadata: Metadata = {
         alt: "Pour voter, il faut commencer par s'inscrire... ",
       },
     ],
-    locale: 'en_US',
+    locale: 'fr_FR',
     type: 'website',
   },
 
@@ -43,9 +51,5 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-
-  verification: {
-    google: 'your-google-site-verification',
   },
 }
