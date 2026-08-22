@@ -190,7 +190,7 @@ export default function Header() {
               transition="transform 0.5s ease-in-out"
               suppressHydrationWarning
             >
-              {!isAuthenticated ? (
+              {/* {!isAuthenticated ? (
                 <Button
                   bg={brandColors.primary}
                   color="white"
@@ -205,11 +205,6 @@ export default function Header() {
                 </Button>
               ) : (
                 <>
-                  {/* <Box>
-                    <Text fontSize="sm" color="gray.300">
-                      {user?.displayName || user?.username}
-                    </Text>
-                  </Box> */}
                   <Button
                     bg={brandColors.primary}
                     color="white"
@@ -224,7 +219,7 @@ export default function Header() {
                     {t.common.logout}
                   </Button>
                 </>
-              )}
+              )} */}
               <MenuRoot>
                 <MenuTrigger asChild>
                   <IconButton aria-label={t.header.optionsAriaLabel} variant="ghost" size="sm">
@@ -234,11 +229,32 @@ export default function Header() {
                 <Portal>
                   <MenuPositioner>
                     <MenuContent minWidth="auto">
-                      <Link href="/settings" color="white">
+                      {/* Hardcoded French for now; to be moved into the translation system later */}
+                      <Link href="/pourquoi" color="white">
+                        <MenuItem value="pourquoi" fontSize="md" px={4} py={3}>
+                          Pourquoi voter ?
+                        </MenuItem>
+                      </Link>
+                      <Link href="/role" color="white">
+                        <MenuItem value="role" fontSize="md" px={4} py={3}>
+                          Le rôle du président
+                        </MenuItem>
+                      </Link>
+                      <Link href="/contrib" color="white">
+                        <MenuItem value="contrib" fontSize="md" px={4} py={3}>
+                          Contribuer
+                        </MenuItem>
+                      </Link>
+                      <Link href="/conditions" color="white">
+                        <MenuItem value="conditions" fontSize="md" px={4} py={3}>
+                          GGU
+                        </MenuItem>
+                      </Link>
+                      {/* <Link href="/settings" color="white">
                         <MenuItem value="settings" fontSize="md" px={4} py={3}>
                           {t.navigation.settings}
                         </MenuItem>
-                      </Link>
+                      </Link> */}
                     </MenuContent>
                   </MenuPositioner>
                 </Portal>

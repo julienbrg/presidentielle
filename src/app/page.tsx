@@ -51,6 +51,7 @@ export default function Home() {
           color={brandColors.white}
           size="lg"
           alignSelf="center"
+          mb="64"
         >
           <a href={CHECK_REGISTRATION_URL} target="_blank" rel="noopener noreferrer">
             {t.home.countdown.checkRegistration}

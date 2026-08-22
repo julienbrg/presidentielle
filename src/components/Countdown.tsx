@@ -4,6 +4,7 @@ import { Box, HStack, Text, VStack } from '@chakra-ui/react'
 import { useSyncExternalStore } from 'react'
 import { useLanguage } from '@/context/LanguageContext'
 import { useTranslation } from '@/hooks/useTranslation'
+import { brandColors } from '@/theme'
 import { ELECTION_MILESTONES, getNextMilestone } from '@/utils/election'
 
 const pad = (n: number) => String(n).padStart(2, '0')
@@ -24,7 +25,7 @@ export function Countdown() {
   const seconds = useSyncExternalStore(subscribeToClock, getSecondsNow, getServerSecondsNow)
 
   if (seconds === null) {
-    return <Box minH="220px" aria-hidden="true" />
+    return <Box minH="320px" aria-hidden="true" />
   }
 
   const now = new Date(seconds * 1000)
@@ -55,32 +56,59 @@ export function Countdown() {
   return (
     <VStack gap={6}>
       <Text
-        fontSize="lg"
-        fontWeight="semibold"
+        fontSize={{ base: 'xl', md: '2xl' }}
+        fontWeight="bold"
         textAlign="center"
-        color={urgent ? 'red.400' : 'inherit'}
+        color={urgent ? 'red.400' : brandColors.accent}
       >
         {t.home.countdown[next.id]}
       </Text>
-      <HStack role="timer" gap={{ base: 2, md: 4 }} justify="center" flexWrap="wrap">
+      {/* Must stay on one line on mobile: tiles shrink and share the row instead of wrapping */}
+      <HStack role="timer" gap={{ base: 2, md: 6 }} justify="center" w="full">
         {units.map(unit => (
           <VStack
             key={unit.label}
-            gap={0}
-            minW={{ base: '70px', md: '90px' }}
-            p={3}
-            borderWidth="1px"
-            borderColor={urgent ? 'red.400' : 'gray.700'}
-            borderRadius="md"
+            gap={1}
+            flex={{ base: '1 1 0', md: '0 0 auto' }}
+            minW={{ base: 0, md: '150px' }}
+            maxW={{ base: '110px', md: 'none' }}
+            p={{ base: 2, md: 6 }}
+            position="relative"
+            borderRadius="xl"
+            boxShadow={`0 0 24px ${urgent ? 'rgba(229, 62, 62, 0.35)' : 'rgba(140, 28, 132, 0.35)'}`}
+            // Gradient border only (background stays transparent): a gradient-filled
+            // overlay masked so only the 3px border ring remains visible
+            _before={{
+              content: '""',
+              position: 'absolute',
+              inset: 0,
+              borderRadius: 'inherit',
+              padding: '3px',
+              bgGradient: 'to-br',
+              gradientFrom: urgent ? 'red.600' : brandColors.primary,
+              gradientTo: urgent ? 'red.400' : brandColors.accent,
+              mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              maskComposite: 'exclude',
+              WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+              WebkitMaskComposite: 'xor',
+              pointerEvents: 'none',
+            }}
           >
             <Text
-              fontSize={{ base: '2xl', md: '4xl' }}
-              fontWeight="bold"
+              fontSize={{ base: '2xl', sm: '3xl', md: '7xl' }}
+              fontWeight="extrabold"
+              lineHeight="1"
               fontVariantNumeric="tabular-nums"
             >
               {unit.value}
             </Text>
-            <Text fontSize="xs" color="gray.400" textTransform="uppercase">
+            <Text
+              fontSize={{ base: '2xs', md: 'sm' }}
+              fontWeight="bold"
+              letterSpacing={{ base: 'wide', md: 'widest' }}
+              color="gray.400"
+              textTransform="uppercase"
+            >
               {unit.label}
             </Text>
           </VStack>

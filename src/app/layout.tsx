@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" translate="no" suppressHydrationWarning>
+    <html lang="fr" translate="no" suppressHydrationWarning>
       <head>
         <meta name="google" content="notranslate" />
       </head>
